@@ -1,0 +1,143 @@
+/* ===================================== 
+   Grid Layout
+======================================== */
+
+header {
+grid-area: header;
+}
+
+nav {
+grid-area: nav;
+}
+
+main {
+grid-area: main;
+}
+
+.main-header {
+    grid-area: main-header;
+}
+
+.main-dashboard-search {
+    grid-area: main-dashboard-search;
+}
+
+.traffic {
+    grid-area: traffic;
+}
+
+.daily-traffic {
+    grid-area: daily-traffic;
+}
+
+.mobile-users {
+    grid-area: mobile-users;
+}
+
+.social-stats {
+    grid-area: social-stats;
+}
+
+.new-members {
+    grid-area: new-members;
+}
+
+.recent-activity {
+    grid-area: recent-activity;
+}
+
+.member-user {
+    grid-area: member-user;
+}
+
+.settings {
+    grid-area: settings;
+}
+
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(60px, auto);
+    /* grid-gap: 5px; */
+    grid-template-areas: 
+      "header"
+      "nav"
+      "main";
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr;   
+    grid-auto-rows: minmax(150px, auto); 
+    grid-template-areas: 
+    "main-header"
+    "main-dashboard-search"
+    "traffic"
+    "daily-traffic"
+    "mobile-users"
+    "social-stats"
+    "new-members"
+    "recent-activity"
+    "member-user"
+    "settings";
+}
+
+.traffic,
+.daily-traffic,
+.mobile-users,
+.social-stats,
+.new-members,
+.recent-activity,
+.member-user,
+.settings {
+  border-style: solid;
+  border-color: #d8d8d8;
+  border-width: 1px;
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: 75px 3fr;
+      grid-template-rows: 75px minmax(150px, auto);
+      grid-template-areas: 
+      "header header"
+      "nav main";
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      
+      .nav-icons {
+        width: 30px;       
+      }
+
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;  
+        grid-template-rows: minmax(70px, auto) minmax(100px, auto);  
+        grid-template-areas:
+        "main-header main-header"
+        "traffic traffic"
+        "daily-traffic mobile-users"
+        "social-stats social-stats"
+        "new-members recent-activity"
+        "member-user settings"; 
+    }    
+}
+
+
+
+
+/* @media (min-width: 992px) {
+    .grid-container {
+      grid-template-areas: 
+      "header header header"
+      "nav main"
+      "nav main";
+    }
+} */

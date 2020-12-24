@@ -1,0 +1,128 @@
+/* ===================================== 
+   Grid Layout
+======================================== */
+
+header {
+grid-area: header;
+}
+
+nav {
+grid-area: nav;
+}
+
+main {
+grid-area: main;
+}
+
+.main-header {
+    grid-area: main-header;
+}
+
+.main-header-search {
+    grid-area: main-header-search;
+}
+
+.traffic {
+    grid-area: traffic;
+}
+
+.daily {
+    grid-area: daily;
+}
+
+.mobile-users {
+    grid-area: mobile-users;
+}
+
+.social-container {
+    grid-area: social;
+}
+
+.members {
+    grid-area: members;
+}
+
+.activity {
+    grid-area: activity;
+}
+
+.message {
+    grid-area: message;
+}
+
+.settings {
+    grid-area: settings;
+}
+
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(150px, auto); 
+    grid-template-areas: 
+      "header"
+      "nav"
+      "main";
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr;   
+    grid-auto-rows: minmax(150px, auto); 
+    grid-template-areas: 
+    "main-header"
+    "main-header-search"
+    "traffic"
+    "daily"
+    "mobile-users"
+    "social"
+    "members"
+    "activity"
+    "message"
+    "settings";
+}
+
+.traffic,
+.daily,
+.mobile-users,
+.social,
+.members,
+.activity,
+.message,
+.settings {
+  border-style: solid;
+  border-color: #d8d8d8;
+  border-width: 1px;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: 75px 3fr;
+      grid-template-rows: 50px minmax(150px, auto);
+      grid-template-areas: 
+      "header header"
+      "nav main";
+    }
+
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;  
+        grid-template-rows: minmax(100px, auto) minmax(100px, auto);  
+        grid-template-areas:
+        "main-header main-header-search"
+        "traffic traffic"
+        "daily mobile-users"
+        "social social"
+        "members activity"
+        "message settings"; 
+    }    
+}
+
+/* @media (min-width: 992px) {
+    .grid-container {
+      grid-template-areas: 
+      "header header header"
+      "nav main"
+      "nav main";
+    }
+} */

@@ -1,0 +1,356 @@
+/* ===================================== 
+   Page Styles
+======================================== */
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(110,133,156);   
+  padding: 0;
+  margin: 0;
+}
+
+.thin-font {
+  font-weight: 200;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.title {
+  color: #ffffff;
+  margin-right: auto;
+  margin-left: 5px;
+  flex: 6;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.bell-container {
+  position: relative;
+}
+
+.profile-container {
+  color: #ffffff;
+  flex: 1;
+  margin-left: 25px;
+  height: 95%;
+}
+
+.profile-container div {
+  display: flex;
+  align-items: center;
+}
+
+/* .bell-border, .border-line, .profile-container {
+  flex-basis: 135px;
+}  */
+
+.profile-container {
+  display: flex;
+  border-left: 2px solid rgb(93, 97, 191, .5);  
+  justify-content: space-around;
+}
+
+.bell-icon {
+  position: absolute;
+  right: -12px;
+  top: -13px;
+  width: 1.8rem;
+  height: 1.8rem;  
+}
+
+.dot {
+  position: fixed;
+  top: 25px;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(104, 217, 111);
+  border-radius: 50%;
+  display: inline-block;  
+}
+
+.profile-image {
+  max-width: 35px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-right: 5px;  
+}
+
+.profile-name {
+  font-weight: 100;
+  font-size: 14px;
+  flex-wrap: nowrap;
+}
+
+.container > * {
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(110,133,156,0.12);
+  padding: 0.85em;
+  border: solid 1px rgba(110,133,156,0.15);
+}
+header {
+  background-color: #7477bf;  
+}
+nav {
+  background-color: #4d4c72;
+}
+
+svg {
+  fill: rgb(104, 217, 111);
+}
+
+main {
+  background-color: #ffffff;  
+}
+
+.bell-graphic {
+  width: 25px;
+}
+
+svg {
+  fill: white;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+
+/* Notifications */
+.notifications {
+  display: none;
+  position: absolute;
+  background-color: #e9f0fe;
+  top: 10px;
+  right: -120px;
+  font-size: 0.8rem;
+  transform: scale(0.9);
+  z-index: 100;
+  border-radius: 5px;
+}
+
+.notifications .list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.15rem 0.75rem;
+  border: .5px solid lightgray;  
+}
+
+.notifications p {
+  color: black;
+  white-space: nowrap;
+  text-align: left;
+  padding-right: 1.2rem;
+}
+
+.notifications i {
+  display: inline-block;
+  color: green;
+  padding-right: 1rem;
+}
+
+.notifications a {
+  padding: 0.75rem 0.95rem;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.notifications a:hover {
+  background-color: black;
+  opacity: 0.5;
+  border-radius: 5px;
+}
+
+.close-message:hover {
+  color: white;
+}
+
+.alert {  
+  position: relative;
+  z-index: 1;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;  
+  justify-content: space-around;
+}
+
+.nav-icons {
+  width: 30px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container a {
+  padding: 0.75rem;
+}
+
+.nav-container img {
+  width: 2.2rem;
+}
+
+.active {
+  border-bottom: 3px solid lawngreen;
+}
+
+.dash-container {
+  display: flex;  
+  align-items: center;  
+}
+
+.dashboard-title {
+  padding: 10px;  
+  /* display: none; */
+}
+
+.dashboard-container {
+  width: 100%;
+  padding: 10px;  
+  border: 1px solid rgba(110,133,156,0.5);   
+  border-top: none;
+  /* border-bottom-left-radius: 5px; */
+  background-color: #fbfbfb;
+}
+
+.boxContainer 
+{
+  margin-left: auto;  
+  margin-right: 15px;
+  position: relative;
+  width: 100%;
+  height: 42px;
+  border: 1px solid rgba(110,133,156,0.5);   
+  padding: 0px 10px;       
+  border-radius: 5px;
+}
+.elementsContainer
+{
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  
+}
+.search
+{
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 0px 5px;
+  border-radius: 50px;
+  font-size: 18px;
+  /* font-family: "Nunito"; */
+  color: #424242;    
+  opacity: 30%;
+  font-weight: 500;
+}
+.search:focus
+{
+  outline: none;
+}
+.material-icons
+{
+  font-size: 26;
+  color:rgba(110,133,156,0.5);            
+}
+
+/* Dashboard Alert */
+
+.alert {      
+  display: flex;
+  align-items: center;  ;
+  margin: auto;
+  width: 95%;
+  height: 30px;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #7477bf;
+  color: white;
+}
+
+.closebtn {  
+  margin-left: auto; 
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;  
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.alert-message {
+  font-size: 14px;
+}
+
+/* Traffic Chart */
+
+
+
+
+@media (min-width: 1024px) {
+
+  .dashboard-title {
+    display: block;
+    padding: 20px;
+  }  
+
+  .boxContainer {
+    width: 375px;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-container img {
+    width: 3rem;
+  }
+
+  .active {
+    border-left: 3px solid lawngreen;
+    border-bottom: none;
+  }
+
+  .notifications {
+    display: none;
+    position: absolute;
+    background-color: #e9f0fe;
+    top: 100%;
+    right: -15px;
+    font-size: 0.8rem;
+    transform: scale(0.9);
+    z-index: 100;
+    border-radius: 5px;
+  }
+
+}
+
+
