@@ -254,19 +254,21 @@ svg {
   vertical-align: middle;
   
 }
-.search
+.search,
+.form-area
 {
   border: none;
   height: 100%;
   width: 100%;
   padding: 0px 5px;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: 14px;
   /* font-family: "Nunito"; */
   color: #424242;    
   opacity: 30%;
   font-weight: 500;
 }
+
 .search:focus
 {
   outline: none;
@@ -312,7 +314,260 @@ svg {
 
 /* Traffic Chart */
 
+/* Social Stats */
 
+.social-header {  
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: small;
+  font-weight: 500;
+}
+
+.social-container {
+  display: flex;
+  margin: 20px 20px;  
+  align-items: center;
+  background-color: #fbfbfb;
+  border: .5px solid lightgray;  
+  border-radius: 5px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50px;
+  background-color: #7477bf;
+  margin: 20px 20px;
+}
+
+.twitter-logo,
+.facebook-logo,
+.google-logo {
+  margin: auto;
+}
+
+.social-title {  
+  margin: 0;
+  font-weight: 500;
+  color: #7477bf;  
+}
+
+.social-statistics {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 200; 
+  color: #666666;
+}
+
+/* New Members */
+
+.members-header,
+.activity-header {  
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 0;
+  font-size: small;
+  font-weight: 500;
+}
+
+.members {
+  margin: 0; 
+  font-weight: 100;
+  font-size: 13px;
+}
+
+.members-container {
+  display: flex;   
+  height: 75px;
+  border-bottom: .5px solid lightgray;
+  align-items: center;
+ 
+}
+
+.members-text p {
+  margin-top: 0;
+  margin-bottom: 1px;  
+}
+
+.members a {
+  font-size: 12px;
+  color: #7477bf;;
+}
+
+.push {
+  margin-left: auto;
+  margin-right: 10px;
+  font-size: 10px;
+}
+
+/* Recent Activity */
+
+.arrow {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+/* Message User */
+
+
+.message-header {
+  margin-left: 10px;
+}
+
+.form-field,
+.form-area {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  border: 1px solid rgba(110,133,156,1.0);
+  margin-left: 10px;
+  display: block;
+  margin: 1em 0;
+  padding: .5em;
+  width: 94%;
+  margin-left: 10px;  
+  font-size: 14px;
+}
+
+.form-area { 
+  height: 150px; 
+}
+
+.message {
+  margin-bottom: 20px;
+  padding-top: 0;
+}
+
+.button-primary {
+  background-color: #7477bf;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  margin: 0;
+  padding: .5em 2em;
+  text-transform: uppercase;
+  width: 94%;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.button-disabled {
+  background-color: rgb(144, 144, 144);
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  margin: 0;
+  padding: .5em 2em;
+  text-transform: uppercase;
+  width: 94%;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* Settings Widget */
+
+.settings-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-header {
+  font-size: 14px;
+  width: 12rem;
+  margin-left: 20px;
+  margin-right: 2rem;
+}
+
+.toggle {
+  --width: 40px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-fill {
+  position: relative;
+  width: calc(var(--width) * 1.5 );
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: #dddddd;
+  transition: background 0.2;
+}
+
+.toggle-input:checked ~ .toggle-fill {
+  background: #7477bf;
+}
+
+.toggle-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
+}
+
+.toggle-input:checked ~ .toggle-fill::after {
+  transform: translateX(var(--width));
+}
+
+/*------ ADDED CSS ---------*/
+
+.on {
+  display: none;
+}
+
+.on,
+.off {
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 25%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+.on {
+  top: 10px;
+}
+
+.off {
+  color: #7477bf;
+  left: auto;
+  right: -2px;
+  top: 10px;
+}
+
+.toggle-input:checked + .toggle-fill .on {
+  display: block;
+}
+
+.toggle-input:checked + .toggle-fill .off {
+  display: none;
+}
+
+/*--------- END --------*/
 
 
 @media (min-width: 1024px) {

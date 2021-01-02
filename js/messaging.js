@@ -1,8 +1,9 @@
-const user = document.getElementById("userField");
-const message = document.getElementById("messageField");
-const send = document.getElementById("send");
+const user = document.querySelector("#userField");
+const message = document.querySelector("#messageField");
+const send = document.querySelector("#send");
 
-send.addEventListener('click', () => {
+send.addEventListener('click', e => {
+    e.preventDefault();
     // ensure user and message fields are filled out
     if (user.value === "" && message.value === "") {
         alert("Please fill out user and message fields before sending");
