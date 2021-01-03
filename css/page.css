@@ -112,6 +112,11 @@ svg {
   cursor: pointer;
 }
 
+.widget-container-full,
+.widget-container-half {
+  width: 95vw;
+}
+
 /* Notifications */
 
 .bell-icon {
@@ -595,6 +600,14 @@ svg {
   }
 }
 
+@media (min-width: 768px) {
+  .widget-container-full {
+    width: 90vw;
+  }
+  .widget-container-half {
+    width: 45vw;
+  }
+}
 
 @media (min-width: 768px) {
 
