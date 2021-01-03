@@ -3,15 +3,15 @@
 ======================================== */
 
 header {
-grid-area: header;
+    grid-area: header;
 }
 
 nav {
-grid-area: nav;
+    grid-area: nav;
 }
 
 main {
-grid-area: main;
+    grid-area: main;
 }
 
 .main-header {
@@ -65,56 +65,55 @@ grid-area: main;
       "main";
 } */
 
-.main-container {
-    display: grid;
-    grid-template-columns: 1fr;   
-    /* grid-auto-rows: minmax(150px, auto);  */
-    grid-template-areas: 
-    "main-header"
-    "main-dashboard-search"
-    "traffic"
-    "daily-traffic"
-    "mobile-users"
-    "social-stats"
-    "new-members"
-    "recent-activity"
-    "member-user"
-    "settings";
+@media (min-width: 320px) {
+    
+    .grid-container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-template-areas: 
+        "header"
+        "nav"
+         "main";
+      }
+
+    .traffic,
+    .daily-traffic,
+    .mobile-users,
+    .social-stats,
+    .new-members,
+    .recent-activity,
+    .member-user,
+    .settings {
+      border-bottom: solid;
+      border-color: #d8d8d8;
+      border-width: 1px;
+      padding-bottom: 20px;
+    }
+
 }
 
-.traffic,
-.daily-traffic,
-.mobile-users,
-.social-stats,
-.new-members,
-.recent-activity,
-.member-user,
-.settings {
-  border-bottom: solid;
-  border-color: #d8d8d8;
-  border-width: 1px;
-  padding-bottom: 20px;
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .grid-container {
       grid-template-columns: 75px 3fr;
-      grid-template-rows: 75px minmax(150px, auto);
+      grid-template-rows: 50px minmax(50px, auto);
       grid-template-areas: 
       "header header"
+      "nav main"
       "nav main";
     }
 
     .nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-      }
+        flex-direction: row;
+        justify-content: center;
+      }   
       
-      .nav-icons {
-        width: 30px;       
-      }
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
 
     .main-container {
         display: grid;
@@ -127,17 +126,31 @@ grid-area: main;
         "social-stats social-stats"
         "new-members recent-activity"
         "member-user settings"; 
-    }    
-}
-
-
-
-
-/* @media (min-width: 992px) {
-    .grid-container {
-      grid-template-areas: 
-      "header header header"
-      "nav main"
-      "nav main";
+    }   
+    
+    .mobile-users {
+        border-left: solid #d8d8d8;
+        border-width: 1px;
     }
+}
+/* 
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 75px 3fr;
+        grid-template-rows: 75px minmax(150px, auto);
+        grid-template-areas: 
+        "header header"
+        "nav main"
+        "nav main";
+      }      
+
+      .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-icons {
+        width: 30px;       
+      }
 } */

@@ -78,9 +78,31 @@ button {
   height: 1.8rem;  
 }
 
+.bell-icon:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
 .dot {
-  position: fixed;
-  top: 25px;
+  position: absolute;
+  top: -15px;
   height: 10px;
   width: 10px;
   background-color: rgb(104, 217, 111);
@@ -141,7 +163,7 @@ svg {
   position: absolute;
   background-color: #e9f0fe;
   top: 10px;
-  right: -120px;
+  right: -140px;
   font-size: 0.8rem;
   transform: scale(0.9);
   z-index: 100;
@@ -190,27 +212,19 @@ svg {
 }
 
 /* Navigation */
-.nav {
-  display: flex;
-  align-items: center;  
-  justify-content: space-around;
-}
+
 
 .nav-icons {
-  width: 30px;
+  width: 2.0rem;
 }
 
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .nav-container a {
-  padding: 0.75rem;
-}
-
-.nav-container img {
-  width: 2.2rem;
+  padding: 0.5rem;
 }
 
 .active {
@@ -325,22 +339,16 @@ svg {
 }
 
 .social-container {
-  display: flex;
-  margin: 20px 20px;  
-  align-items: center;
   background-color: #fbfbfb;
   border: .5px solid lightgray;  
   border-radius: 5px;
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
   width: 65px;
   height: 65px;
   border-radius: 50px;
   background-color: #7477bf;
-  margin: 20px 20px;
 }
 
 .twitter-logo,
@@ -349,15 +357,13 @@ svg {
   margin: auto;
 }
 
-.social-title {  
-  margin: 0;
-  font-weight: 500;
-  color: #7477bf;  
+.social-text {
+  margin: 20px 20px 20px 10px ;
 }
 
 .social-statistics {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 200; 
   color: #666666;
 }
@@ -570,6 +576,75 @@ svg {
 /*--------- END --------*/
 
 
+@media (min-width: 320px) {
+
+  .social-wrapper {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;     
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+  }
+
+  .logo-container {
+    display: flex;
+    margin: 20px 20px;
+  }  
+
+  .social-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .social-title {  
+    margin: 0;
+    font-weight: 500;
+    color: #7477bf;  
+  }
+
+  .settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .form-controls {
+    margin-top: 60px;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  .nav-container {
+    justify-content: flex-start
+  }
+
+  .nav-container a {
+    padding: 1.3rem;
+  }
+
+  .active {
+    border-left: 3px solid lawngreen;
+    border-bottom: none;
+  }
+
+  .social-wrapper {
+    flex-direction: row; 
+    justify-content: center;
+    justify-content: space-around;
+  }
+    
+  .social-container {
+    flex-direction: row;
+    flex-basis: 30%;  
+  }
+}
+
 @media (min-width: 1024px) {
 
   .dashboard-title {
@@ -586,12 +661,7 @@ svg {
   }
 
   .nav-container img {
-    width: 3rem;
-  }
-
-  .active {
-    border-left: 3px solid lawngreen;
-    border-bottom: none;
+    width: 2rem;
   }
 
   .notifications {
@@ -604,6 +674,12 @@ svg {
     transform: scale(0.9);
     z-index: 100;
     border-radius: 5px;
+  }
+
+  #lineChart,
+  #daily-chart,
+  #mobile-chart {
+    padding: 20px;
   }
 
 }
