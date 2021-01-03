@@ -1,5 +1,9 @@
+// Chart/Canvas Variables
 const trafficCanvas = document.getElementById("lineChart").getContext('2d');
+const dailyCanvas = document.getElementById("daily-chart");
+const mobileCanvas = document.getElementById("mobile-chart");
 
+// Traffic Data
 let trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
@@ -33,9 +37,7 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 
-const dailyCanvas = document.getElementById("daily-chart");
-
-// data for daily traffic bar chart
+// Data for daily traffic bar chart
 const dailyData = {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
     datasets: [{
@@ -64,8 +66,8 @@ let dailyChart = new Chart(dailyCanvas, {
     options: dailyOptions
 });
 
-const mobileCanvas = document.getElementById("mobile-chart");
 
+// Mobile Data
 const mobileData = {
     labels: ["Desktop", "Tablet", "Phones"],
     datasets: [{

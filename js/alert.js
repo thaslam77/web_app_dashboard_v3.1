@@ -1,3 +1,4 @@
+// Variables
 const bellContainer = document.querySelector('.bell-container');
 const closeMessage = document.querySelector('.close-message');
 const notifications = document.querySelector('.notifications');
@@ -18,7 +19,7 @@ notifications.addEventListener('click', (e) => {
     $('.notifications').toggle();  
 });
 
-// Navigation Links
+// Navigation Links - Active status
 navigationLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const navigationContainer = document.querySelector('.nav-container .active');      

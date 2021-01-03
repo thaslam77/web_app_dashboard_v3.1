@@ -1,7 +1,11 @@
+// Variables
+
 const user = document.querySelector("#userField");
 const message = document.querySelector("#messageField");
 const send = document.querySelector("#send");
 
+
+// Event Listener for User and Message
 send.addEventListener('click', e => {
     e.preventDefault();
     // ensure user and message fields are filled out
